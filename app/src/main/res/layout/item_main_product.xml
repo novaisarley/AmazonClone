@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/main_product_box_border"
+    android:elevation="5dp">
+
+
+    <ImageView
+        android:id="@+id/item_main_product_iv_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/top_rounded_box"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/teste2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/item_main_product_tv_preco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/right_rounded_box"
+        android:elevation="10dp"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:text="R$ 699.98"
+        android:textColor="@color/colorTextDark"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/item_main_product_iv_image"
+        app:layout_constraintStart_toStartOf="@+id/item_main_product_iv_image" />
+
+    <TextView
+        android:id="@+id/item_main_product_tv_nome"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@drawable/bottom_rounded_box"
+        android:ellipsize="end"
+        android:paddingHorizontal="15dp"
+        android:textColor="@color/colorTextDark"
+        android:paddingTop="10dp"
+        android:singleLine="true"
+        android:text="Monitor Gamer 4k Ultrawide Asus"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_main_product_iv_image" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
