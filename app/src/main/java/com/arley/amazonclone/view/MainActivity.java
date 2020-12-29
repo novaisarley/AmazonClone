@@ -1,4 +1,4 @@
-package com.arley.amazonclone;
+package com.arley.amazonclone.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,15 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import com.arley.amazonclone.Model.MainProductViewHolder;
-import com.arley.amazonclone.Model.Product;
+import com.arley.amazonclone.R;
+import com.arley.amazonclone.model.MainProductViewHolder;
+import com.arley.amazonclone.model.Product;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 public class MainActivity extends AppCompatActivity {
 

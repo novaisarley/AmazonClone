@@ -1,9 +1,8 @@
-package com.arley.amazonclone;
+package com.arley.amazonclone.view;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ListAdapter;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -11,15 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.arley.amazonclone.Model.Constants;
-import com.arley.amazonclone.Model.MainProductViewHolder;
-import com.arley.amazonclone.Model.Product;
-import com.arley.amazonclone.Model.FakeStoreServer;
-import com.arley.amazonclone.Model.Product1;
-import com.arley.amazonclone.Model.ProductRecyclerViewAdapter;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.database.DatabaseReference;
+import com.arley.amazonclone.R;
+import com.arley.amazonclone.model.Constants;
+import com.arley.amazonclone.model.FakeStoreServer;
+import com.arley.amazonclone.model.Product1;
+import com.arley.amazonclone.model.MainProductRecyclerViewAdapter;
 
 import java.util.List;
 
@@ -36,7 +31,7 @@ public class MainActivity1 extends AppCompatActivity {
     FakeStoreServer fakeStoreServer;
     ProgressBar progressBar;
 
-    ProductRecyclerViewAdapter adapter;
+    MainProductRecyclerViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,9 +83,9 @@ public class MainActivity1 extends AppCompatActivity {
 
     private void buildRecyclerView(List<Product1> productsList) {
         productsRecyclerView.setLayoutManager(new LinearLayoutManager(MainActivity1.this));
-        adapter = new ProductRecyclerViewAdapter(productsList, MainActivity1.this);
+        adapter = new MainProductRecyclerViewAdapter(productsList, MainActivity1.this);
 
-        adapter.setOnItemClickListener(new ProductRecyclerViewAdapter.OnItemClickListener() {
+        adapter.setOnItemClickListener(new MainProductRecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onProductClick(int position) {
                 Intent intent = new Intent(MainActivity1.this, ProdutoDetalheActivity.class);

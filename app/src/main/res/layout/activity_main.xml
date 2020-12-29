@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/activity_main_iv_perfil"
             android:layout_width="32dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +28,7 @@
             app:srcCompat="@drawable/ic_account" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/activity_main_iv_carrinho"
             android:layout_width="32dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -43,11 +43,25 @@
             android:layout_height="0dp"
             android:paddingVertical="3dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView2"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/activity_main_iv_carrinho"
+            app:layout_constraintStart_toEndOf="@+id/activity_main_iv_perfil"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/amazon_smile" />
+
+        <TextView
+            android:id="@+id/activity_main_tv_quantidade_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="12sp"
+            android:background="@drawable/ic_circle"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/activity_main_iv_carrinho"
+            app:layout_constraintTop_toTopOf="@+id/activity_main_iv_carrinho" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,7 +69,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
-        android:paddingHorizontal="25dp"
+        android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
         android:paddingTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +77,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/activity_main_edt_pesquisa"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"

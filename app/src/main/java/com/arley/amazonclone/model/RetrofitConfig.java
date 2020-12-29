@@ -1,4 +1,4 @@
-package com.arley.amazonclone.Model;
+package com.arley.amazonclone.model;
 
 import com.google.gson.GsonBuilder;
 
@@ -11,11 +11,11 @@ public class RetrofitConfig {
 
     }
 
-    private static com.arley.amazonclone.Model.RetrofitConfig config = null;
+    private static com.arley.amazonclone.model.RetrofitConfig config = null;
 
-    public static com.arley.amazonclone.Model.RetrofitConfig getInstance(){
+    public static com.arley.amazonclone.model.RetrofitConfig getInstance(){
         if (config==null){
-            config = new com.arley.amazonclone.Model.RetrofitConfig();
+            config = new com.arley.amazonclone.model.RetrofitConfig();
         }
         return config;
     }

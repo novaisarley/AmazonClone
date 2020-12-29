@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_marginHorizontal="10dp"
+    android:elevation="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/item_product_iv_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/top_rounded_box"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/teste2" />
+
+        <TextView
+            android:id="@+id/item_product_tv_preco"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorTextDark"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/item_product_ib_diminuir"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/item_product_iv_image"
+            tools:text="R$ 69999.98" />
+
+        <TextView
+            android:id="@+id/item_product_tv_nome"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bottom_rounded_box"
+            android:ellipsize="end"
+            android:paddingHorizontal="10dp"
+            android:paddingTop="7dp"
+            android:singleLine="true"
+            android:textColor="@color/colorTextDark"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@+id/item_product_tv_preco"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_product_iv_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Monitor Gamer 4k Ultrawide AsusMonitor Gamer 4k Ultrawide AsusMonitor Gamer 4k Ultrawide AsusMonitor Gamer 4k Ultrawide Asus" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="#F3F3F3"
+            android:gravity="center"
+            android:paddingHorizontal="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/item_product_ib_adicionar"
+            app:layout_constraintEnd_toStartOf="@+id/item_product_ib_adicionar"
+            app:layout_constraintTop_toTopOf="@+id/item_product_ib_adicionar"
+            tools:text="10" />
+
+        <ImageButton
+            android:id="@+id/item_product_ib_diminuir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left_rounded_box"
+            android:backgroundTint="@color/amber"
+            android:padding="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/item_product_tv_nome"
+            app:srcCompat="@drawable/ic_minus" />
+
+        <ImageButton
+            android:id="@+id/item_product_ib_adicionar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/right_rounded_box"
+            android:backgroundTint="@color/amber"
+            android:padding="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_product_tv_nome"
+            app:srcCompat="@drawable/ic_plus" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#CAC3C3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

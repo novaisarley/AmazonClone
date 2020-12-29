@@ -1,4 +1,4 @@
-package com.arley.amazonclone.Model;
+package com.arley.amazonclone.model;
 
 public class Product {
     String codigo;

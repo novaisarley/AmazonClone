@@ -1,4 +1,4 @@
-package com.arley.amazonclone;
+package com.arley.amazonclone.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.arley.amazonclone.R;
 import com.bumptech.glide.Glide;
 
 public class ProdutoDetalheActivity extends AppCompatActivity {

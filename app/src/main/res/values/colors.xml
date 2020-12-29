@@ -14,4 +14,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorBackground">#F2FAFD</color>
+    <color name="orange">#F8991D</color>
+    <color name="amber">#F5B723</color>
 </resources>

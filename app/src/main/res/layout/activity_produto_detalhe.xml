@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/activity_produto_detalhe_iv_voltar"
             android:layout_width="32dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +28,7 @@
             app:srcCompat="@drawable/ic_back" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/activity_produto_detalhe_iv_carrinho"
             android:layout_width="32dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -37,14 +37,28 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_shopping_cart" />
 
+        <TextView
+            android:id="@+id/activity_produto_detalhe_tv_quantidade_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_circle"
+            android:gravity="center"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/activity_produto_detalhe_iv_carrinho"
+            app:layout_constraintTop_toTopOf="@+id/activity_produto_detalhe_iv_carrinho" />
+
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:paddingVertical="3dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageView2"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/activity_produto_detalhe_iv_carrinho"
+            app:layout_constraintStart_toEndOf="@+id/activity_produto_detalhe_iv_voltar"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/amazon_smile" />
@@ -215,7 +229,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:background="@drawable/bt_box_border"
-                android:backgroundTint="#F5B723"
+                android:backgroundTint="@color/amber"
                 android:text="Add to Cart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/white"
