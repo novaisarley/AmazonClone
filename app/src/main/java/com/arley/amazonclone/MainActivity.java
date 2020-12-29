@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.arley.amazonclone.Model.MainProductViewHolder;
 import com.arley.amazonclone.Model.Product;
@@ -23,6 +24,9 @@ import com.google.firebase.storage.StorageReference;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView productsRecyclerView;
+
+    ProgressBar progressBar;
+
     DatabaseReference dbReference;
     FirebaseRecyclerOptions<Product> options;
     FirebaseRecyclerAdapter<Product, MainProductViewHolder> adapter;
@@ -33,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         productsRecyclerView = findViewById(R.id.activity_main_rv_product);
+        progressBar = findViewById(R.id.activity_main_progressBar);
+        progressBar.setVisibility(View.GONE);
 
         dbReference = FirebaseDatabase.getInstance().getReference("produtos");
 
@@ -42,16 +48,20 @@ public class MainActivity extends AppCompatActivity {
         adapter = new FirebaseRecyclerAdapter<Product, MainProductViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull MainProductViewHolder holder, int position, @NonNull Product model) {
+                progressBar.setVisibility(View.VISIBLE);
                 Glide.with(MainActivity.this).load(model.getImagem_url()).into(holder.ivImagem);
                 holder.tvNome.setText(model.getNome());
                 holder.tvPreco.setText("R$" + Float.toString(model.getPreco()));
+                progressBar.setVisibility(View.GONE);
             }
 
             @NonNull
             @Override
             public MainProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_main_product, parent, false);
 
+                progressBar.setVisibility(View.VISIBLE);
+
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_main_product, parent, false);
                 return new MainProductViewHolder(view);
             }
         };
@@ -59,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         productsRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         adapter.startListening();
         productsRecyclerView.setAdapter(adapter);
+
 
 //
     }

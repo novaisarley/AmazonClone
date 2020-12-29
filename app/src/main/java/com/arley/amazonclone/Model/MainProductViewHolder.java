@@ -2,7 +2,6 @@ package com.arley.amazonclone.Model;
 
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextClock;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +20,6 @@ public class MainProductViewHolder extends RecyclerView.ViewHolder {
 
         tvPreco = (TextView) itemView.findViewById(R.id.item_main_product_tv_preco);
         tvNome = (TextView) itemView.findViewById(R.id.item_main_product_tv_nome);
-        ivImagem = (ImageView) itemView.findViewById(R.id.item_main_product_iv_image);
+        ivImagem = (ImageView) itemView.findViewById(R.id.activity_produto_detalhe_iv_image);
     }
 }
