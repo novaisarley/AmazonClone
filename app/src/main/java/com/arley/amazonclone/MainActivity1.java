@@ -97,6 +97,8 @@ public class MainActivity1 extends AppCompatActivity {
                 intent.putExtra("imagem", productsList.get(position).getImage());
                 intent.putExtra("descricao", productsList.get(position).getDescription());
                 intent.putExtra("preco", ""+productsList.get(position).getPrice());
+                intent.putExtra("categoria", ""+productsList.get(position).getCategory());
+                intent.putExtra("nome", ""+productsList.get(position).getTitle());
 
                 startActivity(intent);
             }

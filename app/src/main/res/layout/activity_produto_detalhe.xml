@@ -89,7 +89,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/activity_produto_detalhe_tv_category"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="electronics"
@@ -142,7 +142,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="8dp"
-                    android:text="Specification"
+                    android:text="Description"
                     android:textColor="@color/colorTextDark"
                     android:textSize="20sp"
                     android:textStyle="bold"
