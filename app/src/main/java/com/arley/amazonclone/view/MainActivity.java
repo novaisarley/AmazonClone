@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,11 +48,25 @@ public class MainActivity extends AppCompatActivity {
         adapter = new FirebaseRecyclerAdapter<Product, MainProductViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull MainProductViewHolder holder, int position, @NonNull Product model) {
-                progressBar.setVisibility(View.VISIBLE);
                 Glide.with(MainActivity.this).load(model.getImagem_url()).into(holder.ivImagem);
                 holder.tvNome.setText(model.getNome());
                 holder.tvPreco.setText("R$" + Float.toString(model.getPreco()));
+
+                holder.ivImagem.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, ProdutoDetalheActivity.class);
+                        intent.putExtra("imagem", model.getImagem_url());
+                        intent.putExtra("nome", model.getNome());
+                        intent.putExtra("descricao", model.getDescricao());
+                        intent.putExtra("preco", ""+model.getPreco());
+                        intent.putExtra("categoria", model.getEmpresa());
+                        startActivity(intent);
+                    }
+                });
+
                 progressBar.setVisibility(View.GONE);
+
             }
 
             @NonNull
@@ -65,9 +80,11 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        progressBar.setVisibility(View.VISIBLE);
         productsRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         adapter.startListening();
         productsRecyclerView.setAdapter(adapter);
+
 
 
 //

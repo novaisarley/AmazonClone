@@ -214,6 +214,7 @@
                 android:background="@drawable/bt_box_border"
                 android:backgroundTint="#F8991D"
                 android:text="Buy Now"
+                android:visibility="gone"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -237,7 +238,7 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.Guideline

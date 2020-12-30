@@ -5,6 +5,8 @@ public class Product {
     String imagem_url;
     String nome;
     String vendedor;
+    String empresa;
+    String descricao;
     float nota_avaliacao;
     float preco;
     int quantidade;
@@ -13,11 +15,13 @@ public class Product {
     public Product() {
     }
 
-    public Product(String codigo, String imagem_url, String nome, String vendedor, float nota_avaliacao, float preco, int quantidade, int quantidade_avaliacao) {
+    public Product(String codigo, String imagem_url, String nome, String vendedor, String empresa, String descricao, float nota_avaliacao, float preco, int quantidade, int quantidade_avaliacao) {
         this.codigo = codigo;
         this.imagem_url = imagem_url;
         this.nome = nome;
         this.vendedor = vendedor;
+        this.empresa = empresa;
+        this.descricao = descricao;
         this.nota_avaliacao = nota_avaliacao;
         this.preco = preco;
         this.quantidade = quantidade;
@@ -86,5 +90,21 @@ public class Product {
 
     public void setQuantidade_avaliacao(int quantidade_avaliacao) {
         this.quantidade_avaliacao = quantidade_avaliacao;
+    }
+
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }
