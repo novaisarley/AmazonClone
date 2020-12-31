@@ -44,8 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Fill email and password to login  your amazon account"
-            android:textColor="#A7A9B5"
-            android:textSize="17sp"
+            android:textColor="#DADBE1"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -104,8 +104,22 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/activity_login_edt_senha" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/dont_have_an_account"
+            android:textColor="#F4F2F2"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_login_bt_signin" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
