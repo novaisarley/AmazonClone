@@ -14,7 +14,7 @@ import com.arley.amazonclone.R;
 import com.arley.amazonclone.model.Constants;
 import com.arley.amazonclone.model.FakeStoreServer;
 import com.arley.amazonclone.model.Product1;
-import com.arley.amazonclone.model.MainProductRecyclerViewAdapter;
+import com.arley.amazonclone.adapter.MainProductRecyclerViewAdapter;
 
 import java.util.List;
 

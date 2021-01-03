@@ -10,10 +10,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.arley.amazonclone.R;
-import com.arley.amazonclone.model.MainProductViewHolder;
+import com.arley.amazonclone.viewholder.MainProductViewHolder;
 import com.arley.amazonclone.model.Product;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -22,6 +23,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
+
+    ImageView ivCart;
 
     RecyclerView productsRecyclerView;
 
@@ -85,8 +88,19 @@ public class MainActivity extends AppCompatActivity {
         adapter.startListening();
         productsRecyclerView.setAdapter(adapter);
 
-
-
-//
     }
+
+    private void setComponentsId(){
+        ivCart = findViewById(R.id.activity_main_iv_carrinho);
+    }
+
+    private void setComponentsListeners(){
+        ivCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CartActivity.class));
+            }
+        });
+    }
+
 }

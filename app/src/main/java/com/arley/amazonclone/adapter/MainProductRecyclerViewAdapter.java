@@ -1,4 +1,4 @@
-package com.arley.amazonclone.model;
+package com.arley.amazonclone.adapter;
 
 import android.content.Context;
 import android.os.Build;
@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.arley.amazonclone.R;
+import com.arley.amazonclone.model.Product1;
 import com.bumptech.glide.Glide;
 
 import java.util.List;

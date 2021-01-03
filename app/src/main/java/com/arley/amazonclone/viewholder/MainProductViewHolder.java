@@ -1,4 +1,4 @@
-package com.arley.amazonclone.model;
+package com.arley.amazonclone.viewholder;
 
 import android.view.View;
 import android.widget.ImageView;
