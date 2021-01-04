@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".view.MainActivity">
+    tools:context=".view.CartActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -28,42 +28,30 @@
             app:srcCompat="@drawable/ic_back" />
 
         <ImageView
-            android:id="@+id/activity_cart_iv_cart"
-            android:layout_width="32dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_shopping_cart" />
-
-        <TextView
-            android:id="@+id/activity_cart_tv_quantidade_cart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_circle"
-            android:gravity="center"
-            android:text="1"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/activity_cart_iv_cart"
-            app:layout_constraintTop_toTopOf="@+id/activity_cart_iv_cart" />
-
-        <ImageView
             android:id="@+id/imageView3"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:paddingVertical="3dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/activity_cart_iv_cart"
             app:layout_constraintStart_toEndOf="@+id/activity_cart_iv_voltar"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/amazon_smile" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activity_cart_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_product" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
@@ -87,12 +75,12 @@
 
 
             <Button
-                android:id="@+id/activity_cart_bt_adicionar_carrinho"
+                android:id="@+id/activity_cart_bt_comprar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bt_box_border"
-                android:backgroundTint="@color/orange"
-                android:text="Comprar"
+                android:background="@drawable/orange_bt_box_border"
+                android:elevation="10dp"
+                android:text="Checkout"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -107,17 +95,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/activity_cart_rv"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        tools:itemCount="5"
-        tools:listitem="@layout/item_product" />
 
     <ProgressBar
         android:id="@+id/activity_cart_progressBar"

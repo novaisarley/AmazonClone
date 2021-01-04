@@ -27,13 +27,18 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".view.CartActivity" />
+
+        <activity android:name=".view.CartActivity"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".view.ProdutoDetalheActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.MainActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

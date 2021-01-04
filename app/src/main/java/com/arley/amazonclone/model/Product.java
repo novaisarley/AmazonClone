@@ -1,6 +1,9 @@
 package com.arley.amazonclone.model;
 
-public class Product {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Product implements Parcelable {
     String codigo;
     String imagem_url;
     String nome;
@@ -27,6 +30,50 @@ public class Product {
         this.quantidade = quantidade;
         this.quantidade_avaliacao = quantidade_avaliacao;
     }
+
+    protected Product(Parcel in) {
+        codigo = in.readString();
+        imagem_url = in.readString();
+        nome = in.readString();
+        vendedor = in.readString();
+        empresa = in.readString();
+        descricao = in.readString();
+        nota_avaliacao = in.readFloat();
+        preco = in.readFloat();
+        quantidade = in.readInt();
+        quantidade_avaliacao = in.readInt();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(codigo);
+        dest.writeString(imagem_url);
+        dest.writeString(nome);
+        dest.writeString(vendedor);
+        dest.writeString(empresa);
+        dest.writeString(descricao);
+        dest.writeFloat(nota_avaliacao);
+        dest.writeFloat(preco);
+        dest.writeInt(quantidade);
+        dest.writeInt(quantidade_avaliacao);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Product> CREATOR = new Creator<Product>() {
+        @Override
+        public Product createFromParcel(Parcel in) {
+            return new Product(in);
+        }
+
+        @Override
+        public Product[] newArray(int size) {
+            return new Product[size];
+        }
+    };
 
     public String getCodigo() {
         return codigo;

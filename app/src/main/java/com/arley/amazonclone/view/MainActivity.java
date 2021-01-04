@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.arley.amazonclone.R;
 import com.arley.amazonclone.viewholder.MainProductViewHolder;
@@ -19,8 +20,14 @@ import com.arley.amazonclone.model.Product;
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,9 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView productsRecyclerView;
 
+    TextView tvQtdCart;
     ProgressBar progressBar;
 
     DatabaseReference dbReference;
+    DatabaseReference dbCarrinhoReference;
+    FirebaseAuth mAuth;
     FirebaseRecyclerOptions<Product> options;
     FirebaseRecyclerAdapter<Product, MainProductViewHolder> adapter;
 
@@ -39,8 +49,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        productsRecyclerView = findViewById(R.id.activity_main_rv_product);
-        progressBar = findViewById(R.id.activity_main_progressBar);
+        setComponentsId();
+        setComponentsListeners();
+
+        mAuth = FirebaseAuth.getInstance();
+
+        dbCarrinhoReference = FirebaseDatabase.getInstance().getReference("usuarios").child(mAuth.getUid()).child("carrinho");
+
+        dbCarrinhoReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    tvQtdCart.setVisibility(View.VISIBLE);
+                    tvQtdCart.setText(Integer.toString((int)snapshot.getChildrenCount()));
+                }else {
+                    tvQtdCart.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         progressBar.setVisibility(View.GONE);
 
         dbReference = FirebaseDatabase.getInstance().getReference("produtos");
@@ -59,11 +91,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent intent = new Intent(MainActivity.this, ProdutoDetalheActivity.class);
-                        intent.putExtra("imagem", model.getImagem_url());
-                        intent.putExtra("nome", model.getNome());
-                        intent.putExtra("descricao", model.getDescricao());
-                        intent.putExtra("preco", ""+model.getPreco());
-                        intent.putExtra("categoria", model.getEmpresa());
+                        intent.putExtra("produto", model);
                         startActivity(intent);
                     }
                 });
@@ -92,6 +120,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setComponentsId(){
         ivCart = findViewById(R.id.activity_main_iv_carrinho);
+        tvQtdCart = findViewById(R.id.activity_main_tv_quantidade_cart);
+        productsRecyclerView = findViewById(R.id.activity_main_rv_product);
+        progressBar = findViewById(R.id.activity_main_progressBar);
     }
 
     private void setComponentsListeners(){
