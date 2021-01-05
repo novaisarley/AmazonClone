@@ -94,7 +94,6 @@ public class LoginActivity extends AppCompatActivity {
                             progressBar.setVisibility(View.GONE);
                             if (snapshot.exists()){
                                 Toast.makeText(LoginActivity.this, "Logged In", Toast.LENGTH_SHORT).show();
-                                FirebaseUser user = mAuth.getCurrentUser();
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 finish();
                             }else {
@@ -124,8 +123,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
         if (firebaseUser != null){
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
             Toast.makeText(LoginActivity.this, "Logged in as " + firebaseUser.getEmail(), Toast.LENGTH_LONG ).show();
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         }
     }

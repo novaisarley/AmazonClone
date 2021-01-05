@@ -32,6 +32,7 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
     ImageView ivCart;
+    ImageView ivConfig;
 
     RecyclerView productsRecyclerView;
 
@@ -120,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setComponentsId(){
         ivCart = findViewById(R.id.activity_main_iv_carrinho);
+        ivConfig = findViewById(R.id.activity_main_iv_configuracoes);
         tvQtdCart = findViewById(R.id.activity_main_tv_quantidade_cart);
         productsRecyclerView = findViewById(R.id.activity_main_rv_product);
         progressBar = findViewById(R.id.activity_main_progressBar);
@@ -130,6 +132,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, CartActivity.class));
+            }
+        });
+
+        ivConfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
             }
         });
     }

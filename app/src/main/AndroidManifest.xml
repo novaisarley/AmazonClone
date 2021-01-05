@@ -9,36 +9,31 @@
         android:roundIcon="@drawable/round_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AmazonClone">
-        <activity android:name=".view.RegisterActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+        <activity android:name=".view.SettingsActivity"></activity>
+        <activity
+            android:name=".view.RegisterActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".view.LoginActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".view.SplashActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-        <activity android:name=".view.CartActivity"
-            android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".view.CartActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.ProdutoDetalheActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.MainActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
